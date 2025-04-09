@@ -8,42 +8,80 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
   <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
-    background: linear-gradient(to right, #fdfbfb, #ebedee);
-  }
-  .smoothie-card,
-  .bowl-card,
-  .booster-card {
-    border: 2px solid #198754 !important;
-    border-radius: 15px;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-  }
-  .card-img-top {
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-</style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+    }
+    .navbar-brand {
+      font-size: 1.8rem;
+      color: #2f3542;
+    }
+    .card.smoothie-card,
+    .card.bowl-card,
+    .card.booster-card {
+      border: 2px solid #198754 !important;
+      border-radius: 15px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .smoothie-card:hover,
+    .bowl-card:hover,
+    .booster-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      color: #27ae60;
+    }
+    .card-text {
+      color: #636e72;
+    }
+    .text-success {
+      color: #28a745 !important;
+    }
+    .collapsible-section .btn {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #fff;
+      background-color: #28a745;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: auto;
+      background: none;
+      border: none;
+    }
+    .carousel-control-prev span,
+    .carousel-control-next span {
+      color: #ff6600;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
-<body class="animate__animated animate__fadeIn">
-  <!-- Navbar -->
+<body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">SuperJuice</a>
     </div>
   </nav>
 
-  <!-- Hero Carousel -->
   <header class="text-white text-center py-0" style="background-color: #000;">
     <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-  <img src="images/superman.jpg" class="d-block w-100" alt="Smoothie Slide" style="height: 75vh; object-fit: cover;">
-</div>
-        
+          <img src="images/superman.jpg" class="d-block w-100" alt="Smoothie Slide" style="height: 75vh; object-fit: cover;">
+        </div>
         <div class="carousel-item">
           <img src="images/kid_dynamite.jpg" class="d-block w-100" alt="Slide 3" style="height: 75vh; object-fit: cover;">
           <div class="carousel-caption d-none d-md-block">
@@ -52,16 +90,15 @@
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="background: none; border: none;">
-  <span style="color: #ff6600; font-size: 3rem; font-weight: bold;">❮</span>
-</button>
-      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="background: none; border: none;">
-  <span style="color: #ff6600; font-size: 3rem; font-weight: bold;">❯</span>
-</button>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span aria-hidden="true">❮</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span aria-hidden="true">❯</span>
+      </button>
     </div>
   </header>
 
-  <!-- Smoothie Quote -->
   <section class="py-4 bg-light text-center animate__animated animate__fadeInDown">
     <div class="container">
       <h2 class="display-6 fw-semibold">“You can’t buy happiness, but you can buy smoothies — and that’s kind of the same thing.”</h2>
@@ -69,75 +106,20 @@
     </div>
   </section>
 
-  <!-- Smoothies Section -->
-  <section class="py-5 collapsible-section">
-    <div class="container">
-      <button class="btn d-block mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#smoothieSection">Superfood Smoothies</button>
-      <div class="collapse show" id="smoothieSection">
-        <div class="row g-4">
-          <div class="col-md-4"><div class="card h-100 smoothie-card border border-success border-2"><img src="images/coco_verde.jpg" class="card-img-top" alt="Coco Verde"><div class="card-body"><h5 class="card-title">Coco Verde</h5><p class="card-text">Kale, spinach, mango, banana, dates, coconut oil, coconut water</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 smoothie-card border border-success border-2"><img src="images/bradleys_cbj.jpg" class="card-img-top" alt="Bradley's CB&J"><div class="card-body"><h5 class="card-title">Bradley's CB&J</h5><p class="card-text">Strawberry, banana, cashew butter, dates, dragonfruit, house cashew milk</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 smoothie-card"><img src="images/superman.jpg" class="card-img-top" alt="Superman"><div class="card-body"><h5 class="card-title">Superman</h5><p class="card-text">Blueberries, goji berries, banana, dates, dragonfruit, house almond milk</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 smoothie-card"><img src="images/the_blaze.jpg" class="card-img-top" alt="The Blaze"><div class="card-body"><h5 class="card-title">The Blaze</h5><p class="card-text">Strawberry, mango, banana, dates, ginger, cayenne, house cashew milk</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 smoothie-card"><img src="images/tropic_energy.jpg" class="card-img-top" alt="Tropic Energy"><div class="card-body"><h5 class="card-title">Tropic Energy</h5><p class="card-text">Mango, banana, dates, dragonfruit, brewed guayusa</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 smoothie-card"><img src="images/basil_bomb.jpg" class="card-img-top" alt="Basil Bomb"><div class="card-body"><h5 class="card-title">Basil Bomb</h5><p class="card-text">Strawberry, banana, basil, dates, house almond milk</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 smoothie-card"><img src="images/blended_brew.jpg" class="card-img-top" alt="Blended Brew"><div class="card-body"><h5 class="card-title">Blended Brew</h5><p class="card-text">Banana, cashew butter, cold brew coffee, cacao (optional)</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 smoothie-card"><img src="images/cacao_monster.jpg" class="card-img-top" alt="Cacao Monster"><div class="card-body"><h5 class="card-title">Cacao Monster</h5><p class="card-text">Banana, cashew butter, cacao, house almond milk</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 smoothie-card"><img src="images/kid_dynamite.jpg" class="card-img-top" alt="Kid Dynamite"><div class="card-body"><h5 class="card-title">Kid Dynamite</h5><p class="card-text">Banana, dragonfruit, house cashew milk</p></div></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="container py-5">
+    <h2 class="text-success fw-bold mb-4 text-center">Superfood Smoothies</h2>
+    <div class="row g-4" id="smoothie-section"></div>
 
-  <!-- Boosters Section -->
-  <section class="py-5 bg-light collapsible-section">
-    <div class="container">
-      <button class="btn d-block mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#boosterSection">Boosters</button>
-      <div class="collapse show" id="boosterSection">
-        <div class="row g-4">
-          <div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/acai.jpg" class="card-img-top" alt="Acai"><div class="card-body"><p class="card-text fw-semibold text-success">Acai</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/chia_seeds.jpg" class="card-img-top" alt="Chia Seeds"><div class="card-body"><p class="card-text fw-semibold text-success">Chia Seeds</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/hemp_protein.jpg" class="card-img-top" alt="Hemp Protein"><div class="card-body"><p class="card-text fw-semibold text-success">Hemp Protein</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/spinach.jpg" class="card-img-top" alt="Spinach"><div class="card-body"><p class="card-text fw-semibold text-success">Spinach</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/kale.jpg" class="card-img-top" alt="Kale"><div class="card-body"><p class="card-text fw-semibold text-success">Kale</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/matcha.jpg" class="card-img-top" alt="Matcha"><div class="card-body"><p class="card-text fw-semibold text-success">Matcha</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/goji_berries.jpg" class="card-img-top" alt="Goji Berries"><div class="card-body"><p class="card-text fw-semibold text-success">Goji Berries</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/vegan_probiotic.jpg" class="card-img-top" alt="Vegan Probiotic"><div class="card-body"><p class="card-text fw-semibold text-success">Vegan Probiotic</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/coconut_oil.jpg" class="card-img-top" alt="Coconut Oil"><div class="card-body"><p class="card-text fw-semibold text-success">Coconut Oil</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/flax_seeds.jpg" class="card-img-top" alt="Flax Seeds"><div class="card-body"><p class="card-text fw-semibold text-success">Flax Seeds</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/wheatgrass.jpg" class="card-img-top" alt="Wheatgrass"><div class="card-body"><p class="card-text fw-semibold text-success">Wheatgrass</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/ginger.jpg" class="card-img-top" alt="Ginger"><div class="card-body"><p class="card-text fw-semibold text-success">Ginger</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/cacao.jpg" class="card-img-top" alt="Cacao"><div class="card-body"><p class="card-text fw-semibold text-success">Cacao</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/aloe_vera.jpg" class="card-img-top" alt="Aloe Vera"><div class="card-body"><p class="card-text fw-semibold text-success">Aloe Vera</p></div></div></div>
-<div class="col-6 col-md-3"><div class="card h-100 text-center p-3 booster-card border border-success border-2"><img src="images/maca.jpg" class="card-img-top" alt="Maca"><div class="card-body"><p class="card-text fw-semibold text-success">Maca</p></div></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h2 class="text-success fw-bold mb-4 text-center mt-5">Boosters</h2>
+    <div class="row g-4" id="booster-section"></div>
 
-  <!-- Bowls Section -->
-  <section class="py-5 collapsible-section">
-    <div class="container">
-      <button class="btn d-block mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#bowlSection">Acai Bowls & More</button>
-      <div class="collapse show" id="bowlSection">
-        <div class="row g-4">
-          <div class="col-md-4"><div class="card h-100 bowl-card border border-success border-2"><img src="images/acai_bowl.jpg" class="card-img-top" alt="Acai Smoothie Bowl"><div class="card-body"><h5 class="card-title">Acai Smoothie Bowl</h5><p class="card-text">Pick any smoothie as the base. Blended with acai and topped with fruit and house granola.</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 bowl-card border border-success border-2"><img src="images/oats_bowl.jpg" class="card-img-top" alt="Oats Bowl"><div class="card-body"><h5 class="card-title">Gluten-Free Oats Bowl</h5><p class="card-text">Oats soaked in house cashew milk, served cold, 2 toppings included.</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 bowl-card"><img src="images/quinoa_bowl.jpg" class="card-img-top" alt="Quinoa Bowl"><div class="card-body"><h5 class="card-title">Quinoa Bowl</h5><p class="card-text">Quinoa cooked in house cashew milk, served cold, 2 toppings included.</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 bowl-card"><img src="images/combination_bowl.jpg" class="card-img-top" alt="Combination Bowl"><div class="card-body"><h5 class="card-title">Combination Bowl</h5><p class="card-text">Combination of oats and quinoa, served cold, 2 toppings included.</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 bowl-card"><img src="images/vanilla_cashew_parfait.jpg" class="card-img-top" alt="Vanilla Cashew Parfait"><div class="card-body"><h5 class="card-title">Vanilla Cashew Parfait</h5><p class="card-text">A vegan take on Greek-style yogurt, loaded with probiotics and topped with berries and house granola.</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 bowl-card"><img src="images/chia_seed_pudding.jpg" class="card-img-top" alt="Chia Seed Pudding"><div class="card-body"><h5 class="card-title">Chia Seed Pudding</h5><p class="card-text">Available in Strawberry, Chocolate, Vanilla Goji, and Vanilla Matcha flavors.</p></div></div></div>
-<div class="col-md-4"><div class="card h-100 bowl-card"><img src="images/house_granola.jpg" class="card-img-top" alt="House Granola"><div class="card-body"><h5 class="card-title">House Granola</h5><p class="card-text">You asked for it, so we made our granola available in 16 oz containers.</p></div></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h2 class="text-success fw-bold mb-4 text-center mt-5">Acai Bowls & More</h2>
+    <div class="row g-4" id="bowl-section"></div>
+  </div>
 
-  <!-- Footer -->
   <footer class="text-white pt-5 pb-4" style="background-color:#0b132b">
     <div class="container text-md-left">
       <div class="row text-md-left">
-        <!-- Contact -->
         <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mt-3 animate__animated animate__fadeInUp">
           <h5 class="mb-4 fw-bold" style="color:#00ff99">Contact <span style="border-bottom: 3px solid #00ff99; display: inline-block; width: 40px;"></span></h5>
           <p><i class="bi bi-geo-alt-fill"></i> Charlottesville, VA, USA</p>
@@ -150,7 +132,6 @@
             <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
-        <!-- Opening -->
         <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mt-3 animate__animated animate__fadeInUp">
           <h5 class="mb-4 fw-bold" style="color:#00ff99">Opening <span style="border-bottom: 3px solid #00ff99; display: inline-block; width: 40px;"></span></h5>
           <p><strong>Monday - Friday</strong><br/>9AM - 3PM</p>
@@ -160,6 +141,40 @@
     </div>
   </footer>
 
+  <script>
+    const smoothieItems = [
+      "coco_verde", "bradleys_cbj", "superman", "the_blaze", "tropic_energy", "basil_bomb", "blended_brew", "cacao_monster", "kid_dynamite"
+    ];
+    const bowlItems = [
+      "acai_bowl", "oats_bowl", "quinoa_bowl", "combination_bowl", "vanilla_cashew_parfait", "chia_seed_pudding", "house_granola"
+    ];
+    const boosterItems = [
+      "acai", "chia_seeds", "hemp_protein", "spinach", "kale", "matcha", "goji_berries", "vegan_probiotic", "coconut_oil", "flax_seeds", "wheatgrass", "ginger", "cacao", "aloe_vera", "maca"
+    ];
+
+    function createCard(name, path = "images/", ext = ".jpg", cardClass = "smoothie-card") {
+      return `
+        <div class="col-md-4">
+          <div class="card ${cardClass}">
+            <img src="${path}${name}${ext}" class="card-img-top" alt="${name.replace(/_/g, ' ')}">
+            <div class="card-body">
+              <h5 class="card-title">${name.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</h5>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    smoothieItems.forEach(name => {
+      document.getElementById("smoothie-section").innerHTML += createCard(name, "images/", ".jpg", "smoothie-card");
+    });
+    boosterItems.forEach(name => {
+      document.getElementById("booster-section").innerHTML += createCard(name, "images/", ".jpg", "booster-card");
+    });
+    bowlItems.forEach(name => {
+      document.getElementById("bowl-section").innerHTML += createCard(name, "images/", ".jpg", "bowl-card");
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
